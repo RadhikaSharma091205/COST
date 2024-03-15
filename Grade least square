@@ -1,0 +1,8 @@
+data <- data.frame(
+  X = c(6, 5, 8, 8, 7, 6, 10, 4, 9, 7),
+  Y = c(8, 7, 7, 10, 5, 10, 8, 6, 8, 6)
+)
+lm_Y_on_X <- lm(Y ~ X, data)
+summary(lm_Y_on_X)
+lm_X_on_Y <- lm(X ~ Y, data)
+summary(lm_X_on_Y)
