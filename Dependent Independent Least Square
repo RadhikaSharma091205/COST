@@ -1,10 +1,10 @@
-data<-data.frame(
-  H<-c(70,63,72,60,66,70,74,65,62,67,65,68),
-  W<-c(155,150,180,135,166,168,178,160,132,145,139,152)
+prac<-data.frame(
+  H=c(70,63,72,60,66,70,74,65,62,67,65,68),
+  W=c(155,150,180,135,156,168,178,160,132,145,139,152)
 )
-print("H is independent variable")
-reg<-lm(W~H)
-reg
-print("H is dependent variable")
-reg<-lm(H~W)
-reg
+print("a) H as the independent variable")
+reg<-lm(W ~ H,data = prac)
+print(reg)
+print("b) H as the dependent variable")
+reg<-lm(H ~ W,data = prac)
+print(reg)
