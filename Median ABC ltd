@@ -1,0 +1,16 @@
+data<-read.csv(file.choose(),sep = ",",header = T)
+data2<-data
+data2$cumm<-cumsum(data2$frequency)
+View(data2)
+data2$pcf<-data.table::shift(data2$cumm,1)
+data2$low<-data2$low - 0.05
+data2$high<-data2$high + 0.05
+N<-max(data2$cumm)
+median_data<-data2[(data2$pcf <= N/2 & data2$cumm>= N/2), ]
+median_data
+l1<-median_data$low
+l2<-median_data$high
+pcf<-median_data$pcf
+f<-median_data$frequency
+median<-l1+((N/2-pcf)/f*(l2-l1))
+median
