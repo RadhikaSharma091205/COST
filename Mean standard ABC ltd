@@ -1,3 +1,4 @@
+data<-read.csv(file.choose(),sep = ",",header = T)
 data3 <- data
 View(data3)
 data3$f0 <- data.table::shift(data3$frequency,1)
